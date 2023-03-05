@@ -328,6 +328,17 @@ public class SpotifyRepository {
             return song;
         }
     }
+    public String mostPopularArtist() {
+        int max = Integer.MIN_VALUE;
+        Artist artist1=null;
+        for(Artist artist:artists){
+            if(artist.getLikes()>=max){
+                artist1=artist;
+                max = artist.getLikes();
+            }
+        }
+        return artist1.getName();
+    }
 
     public String mostPopularSong() {
         int max=Integer.MIN_VALUE;
